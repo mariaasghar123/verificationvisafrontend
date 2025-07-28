@@ -11,13 +11,26 @@ export default function AdminUploadForm() {
   });
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "file") {
-      setFormData({ ...formData, file: files[0] });
-    } else {
-      setFormData({ ...formData, [name]: value });
+  const { name, value, files } = e.target;
+  if (name === "file") {
+    const file = files[0];
+
+    if (file) {
+      const maxSizeInMB = 2; // Max allowed size (e.g. 2MB)
+      const fileSizeInMB = file.size / (1024 * 1024); // Convert bytes to MB
+
+      if (fileSizeInMB > maxSizeInMB) {
+        alert("File size must be less than 2MB");
+        return; // Stop further execution
+      }
+
+      setFormData({ ...formData, file: file });
     }
-  };
+  } else {
+    setFormData({ ...formData, [name]: value });
+  }
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
