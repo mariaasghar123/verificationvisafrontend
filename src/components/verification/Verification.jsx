@@ -85,7 +85,7 @@ export default function Verify() {
               <strong>Uploaded File:</strong>
             </p>
             <img
-              src={`${import.meta.env.VITE_API_BASE_URL}uploads/${result.file}`}
+              src={result.file}
               alt="Document"
               width="300"
             />
