@@ -55,14 +55,7 @@ export default function AdminDocumentList() {
               <td className="border px-2 py-1">{doc.passportNumber}</td>
               <td className="border px-2 py-1">{doc.referenceNumber}</td>
               <td className="border px-2 py-1">
-                <a
-                  href={`${BASE_URL}/uploads/${doc.file}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 underline"
-                >
-                  View File
-                </a>
+                <a href={doc.file} target="_blank" rel="noopener noreferrer">View File</a>
               </td>
               <td className="border px-2 py-1">
                 <button
