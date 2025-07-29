@@ -68,7 +68,7 @@ export default function Footer() {
         style={{
           position: 'fixed',
           bottom: '20px',
-          right: '20px',
+          right: '30px',
           backgroundColor: '#25D366',
           color: 'white',
           borderRadius: '50%',
@@ -90,6 +90,7 @@ export default function Footer() {
   @media (max-width: 576px) {
     .whatsapp-float {
       bottom: 70px !important;  /* Or more, to avoid overlapping navbars */
+      right: 50px !important;   /* Adjust as needed */
     }
   }
 `}</style>
