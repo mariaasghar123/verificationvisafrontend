@@ -51,6 +51,7 @@ export default function Footer() {
                 <li><strong>Email:</strong> sardarjagmohansingh302@gmail.com</li>
                 <li><strong>Name:</strong> Sardar Jagmohan Singh</li>
                 <li><strong>Helpline:</strong> +44 7861 666 452</li>
+                
               </ul>
             </div>
           </div>
@@ -62,6 +63,8 @@ export default function Footer() {
         href="https://wa.me/447861666452"
         target="_blank"
         rel="noopener noreferrer"
+        className="whatsapp-button"
+       
         style={{
           position: 'fixed',
           bottom: '20px',
@@ -75,13 +78,28 @@ export default function Footer() {
           justifyContent: 'center',
           alignItems: 'center',
           boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
-          zIndex: 1000,
+          zIndex: 9999,
           textDecoration: 'none',
           fontSize: '30px'
         }}
       >
         <i className="fab fa-whatsapp"></i>
       </a>
+      {/* Inline CSS for responsiveness */}
+      <style jsx>{`
+        .whatsapp-button {
+          display: flex !important;
+        }
+        @media screen and (max-width: 576px) {
+          .whatsapp-button {
+            width: 50px !important;
+            height: 50px !important;
+            font-size: 24px !important;
+            bottom: 15px !important;
+            right: 15px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
