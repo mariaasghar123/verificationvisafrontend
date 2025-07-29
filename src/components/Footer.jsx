@@ -63,7 +63,7 @@ export default function Footer() {
         href="https://wa.me/447861666452"
         target="_blank"
         rel="noopener noreferrer"
-        className="whatsapp-button"
+        className="whatsapp-float"
        
         style={{
           position: 'fixed',
@@ -86,20 +86,13 @@ export default function Footer() {
         <i className="fab fa-whatsapp"></i>
       </a>
       {/* Inline CSS for responsiveness */}
-      <style jsx>{`
-        .whatsapp-button {
-          display: flex !important;
-        }
-        @media screen and (max-width: 576px) {
-          .whatsapp-button {
-            width: 50px !important;
-            height: 50px !important;
-            font-size: 24px !important;
-            bottom: 15px !important;
-            right: 15px !important;
-          }
-        }
-      `}</style>
+     <style>{`
+  @media (max-width: 576px) {
+    .whatsapp-float {
+      bottom: 70px !important;  /* Or more, to avoid overlapping navbars */
+    }
+  }
+`}</style>
     </div>
   );
 }
