@@ -7,55 +7,61 @@ export default function AdminUploadForm() {
     name: "",
     passportNumber: "",
     referenceNumber: "",
-    file: null,
+    files: [],
   });
 
   const handleChange = (e) => {
-  const { name, value, files } = e.target;
-  if (name === "file") {
-    const file = files[0];
-
-    if (file) {
-      const maxSizeInMB = 2; // Max allowed size (e.g. 2MB)
-      const fileSizeInMB = file.size / (1024 * 1024); // Convert bytes to MB
-
-      if (fileSizeInMB > maxSizeInMB) {
-        alert("File size must be less than 2MB");
-        return; // Stop further execution
+    const { name, value, files } = e.target;
+    if (name === "files") {
+      const selectedFiles = Array.from(files);
+      console.log("Selected files:", selectedFiles.map(f => ({ name: f.name, size: f.size, type: f.type }))); // Debug log
+      const maxSizeInMB = 50;
+      for (let file of selectedFiles) {
+        const fileSizeInMB = file.size / ( 1024 * 1024 );
+        if (fileSizeInMB > maxSizeInMB) {
+          alert(`File ${file.name} size must be less than 50MB`);
+          return;
+        }
       }
-
-      setFormData({ ...formData, file: file });
+      setFormData({ ...formData, files: selectedFiles });
+    } else {
+      setFormData({ ...formData, [name]: value });
     }
-  } else {
-    setFormData({ ...formData, [name]: value });
-  }
-};
-
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.files.length === 0) {
+      alert("Please select at least one file to upload");
+      return;
+    }
 
     const data = new FormData();
     data.append("name", formData.name);
     data.append("passportNumber", formData.passportNumber);
     data.append("referenceNumber", formData.referenceNumber);
-    data.append("file", formData.file);
+    formData.files.forEach((file, index) => {
+      data.append("files", file);
+      console.log(`Appending file ${index + 1}: ${file.name}`); // Debug log
+    });
 
     try {
-      await axios.post(`${BASE_URL}/api/admin/upload`, data, {
+      const response = await axios.post(`${BASE_URL}/api/admin/upload`, data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
+      console.log("Upload response:", response.data); // Debug log
       alert("Document uploaded successfully!");
-      // Optional: Reset the form
       setFormData({
         name: "",
         passportNumber: "",
         referenceNumber: "",
-        file: null,
+        files: [],
       });
+      document.querySelector('input[type="file"]').value = "";
     } catch (err) {
-      console.error("Upload failed:", err);
-      alert("Upload failed. Please try again.");
+      // console.error("Upload error:", err.response?.data || err); // Debug log
+      alert("Upload failed: " + (err.response?.data?.error || "Please try again."));
     }
   };
 
@@ -91,12 +97,12 @@ export default function AdminUploadForm() {
           required
         />
         <input
-          name="file"
+          name="files"
           type="file"
-          accept=".pdf,.jpg,.png"
+          accept=".pdf,.jpg,.jpeg,.png"
           onChange={handleChange}
+          multiple
           className="w-full mb-3"
-          
         />
         <button
           type="submit"

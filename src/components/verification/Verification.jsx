@@ -23,16 +23,28 @@ export default function Verify() {
 
       if (response.ok) {
         const data = await response.json();
+        console.log("Verify result:", data); // Debug log
         setResult(data);
         setError("");
       } else {
         const res = await response.json();
+        console.error("Verify error:", res); // Debug log
         setResult(null);
         setError(res.message || "No document found.");
       }
     } catch (err) {
+      console.error("Server error:", err); // Debug log
       setError("Server error. Please try again later.");
     }
+  };
+
+  const isPdf = (url) => url.toLowerCase().endsWith(".pdf");
+
+  const normalizeFiles = (file) => {
+    if (!file) return [];
+    if (typeof file === "string") return [file];
+    if (Array.isArray(file)) return file;
+    return [];
   };
 
   return (
@@ -65,7 +77,7 @@ export default function Verify() {
             className="btn text-white mb-5"
             style={{ backgroundColor: "#001f3f" }}
           >
-            verification
+            Verification
           </button>
         </form>
 
@@ -82,14 +94,37 @@ export default function Verify() {
               <strong>Passport:</strong> {result.passportNumber}
             </p>
             <p>
-              <strong>Uploaded File:</strong>
+              <strong>Uploaded Files:</strong>
             </p>
-            <img
-              src={result.file}
-              alt="Document"
-              width="300"
-            />
-            {/* Add other details as needed */}
+            {normalizeFiles(result.file).length > 0 ? (
+              normalizeFiles(result.file).map((fileUrl, idx) => (
+                <div key={idx} className="mb-3">
+                  {isPdf(fileUrl) ? (
+                    <div>
+                      <a href={fileUrl} target="_blank" rel="noopener noreferrer">
+                        View PDF {idx + 1}
+                      </a>
+                      <iframe
+                        src={`${fileUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+                        title={`PDF ${idx + 1}`}
+                        width="100%"
+                        height="400px"
+                        style={{ border: "1px solid #ccc" }}
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={fileUrl}
+                      alt={`Document ${idx + 1}`}
+                      width="300"
+                      className="mb-2"
+                    />
+                  )}
+                </div>
+              ))
+            ) : (
+              <p>No files uploaded</p>
+            )}
           </div>
         )}
         {error && <div className="alert alert-danger">{error}</div>}

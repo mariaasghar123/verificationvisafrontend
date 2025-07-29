@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import BASE_URL from "../../api/baseUrl"
-import { Link } from "react-router-dom";
+import BASE_URL from "../../api/baseUrl";
 
 export default function AdminDocumentList() {
   const [documents, setDocuments] = useState([]);
@@ -10,6 +9,7 @@ export default function AdminDocumentList() {
     axios
       .get(`${BASE_URL}/api/admin`)
       .then((res) => {
+        console.log("Fetched documents:", res.data); // Debug log
         setDocuments(res.data);
       })
       .catch((err) => {
@@ -27,12 +27,25 @@ export default function AdminDocumentList() {
         .delete(`${BASE_URL}/api/admin/delete/${id}`)
         .then((res) => {
           alert("Deleted successfully");
-          fetchDocuments(); // refresh list
+          fetchDocuments();
         })
         .catch((err) => {
           console.error("Error deleting document:", err);
         });
     }
+  };
+
+  //const isPdf = (url) => url.toLowerCase().endsWith(".pdf");
+  const isPdf = (url) => typeof url === "string" && url.toLowerCase().endsWith(".pdf");
+
+
+  // Normalize file URLs
+  // This function ensures that the file URLs are in the correct format
+  const normalizeFiles = (file) => {
+    if (!file) return [];
+    if (typeof file === "string") return [file];
+    if (Array.isArray(file)) return file;
+    return [];
   };
 
   return (
@@ -44,7 +57,7 @@ export default function AdminDocumentList() {
             <th className="border px-2 py-1">Name</th>
             <th className="border px-2 py-1">Passport #</th>
             <th className="border px-2 py-1">Reference #</th>
-            <th className="border px-2 py-1">File</th>
+            <th className="border px-2 py-1">Files</th>
             <th className="border px-2 py-1">Action</th>
           </tr>
         </thead>
@@ -55,7 +68,26 @@ export default function AdminDocumentList() {
               <td className="border px-2 py-1">{doc.passportNumber}</td>
               <td className="border px-2 py-1">{doc.referenceNumber}</td>
               <td className="border px-2 py-1">
-                <a href={doc.file} target="_blank" rel="noopener noreferrer">View File</a>
+                {normalizeFiles(doc.file).length > 0 ? (
+                  normalizeFiles(doc.file).map((fileUrl, idx) => (
+                    <div key={idx} className="mb-2">
+                      <a href={fileUrl} target="_blank" rel="noopener noreferrer">
+                        View File {idx + 1} ({isPdf(fileUrl) ? "PDF" : "Image"})
+                      </a>
+                      {isPdf(fileUrl) && (
+                        <iframe
+                          src={`${fileUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+                          title={`PDF ${idx + 1}`}
+                          width="100%"
+                          height="200px"
+                          style={{ border: "1px solid #ccc" }}
+                        />
+                      )}
+                    </div>
+                  ))
+                ) : (
+                  <span>No files</span>
+                )}
               </td>
               <td className="border px-2 py-1">
                 <button
