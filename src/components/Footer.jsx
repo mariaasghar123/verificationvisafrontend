@@ -87,10 +87,10 @@ export default function Footer() {
       </a>
       {/* Inline CSS for responsiveness */}
      <style>{`
-  @media (max-width: 576px) {
+  @media (max-width: 550px) {
     .whatsapp-float {
       bottom: 70px !important;  /* Or more, to avoid overlapping navbars */
-      right: 100px !important;   /* Adjust as needed */
+      right: 150px !important;   /* Adjust as needed */
     }
   }
 `}</style>
