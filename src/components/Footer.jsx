@@ -91,6 +91,9 @@ export default function Footer() {
     .whatsapp-float {
       bottom: 70px !important;  /* Or more, to avoid overlapping navbars */
       right: 150px !important;   /* Adjust as needed */
+          position: 'fixed',
+          zIndex: 9999,
+
     }
   }
 `}</style>
