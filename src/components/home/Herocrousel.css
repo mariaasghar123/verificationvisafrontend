@@ -5,6 +5,7 @@
   height: 85vh;
 }
 
+
 .carousel-slide {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -18,7 +19,7 @@
 
 .carousel-image img {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   object-fit: cover;
 }
 
@@ -49,4 +50,59 @@
 
 .carousel-arrow.right {
   right: 10px;
+}
+@media screen and (max-width: 768px) {
+  .carousel-content {
+    max-width: 90%;
+    top: 10%;
+    left: 5%;
+    
+    text-align: center;
+    color: black;
+  }
+
+  .carousel-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-content h5 {
+    font-size: 1rem;
+  }
+
+  .carousel-arrow {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-image {
+    width: 100%;
+    position: relative;
+  }
+
+  .carousel-image img {
+    width: 100%;
+    height: 60vh; /* thoda kam kiya so it fits smaller screen */
+    object-fit: cover;
+  }
+
+  .carousel-content {
+    top: 5%;
+    left: 2%;
+    max-width: 96%;
+    text-align: center;
+    color: black;
+  }
+
+  .carousel-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-content h5 {
+    font-size: 0.9rem;
+  }
+
+  .carousel-arrow {
+    font-size: 1.2rem;
+  }
 }
