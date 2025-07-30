@@ -85,20 +85,27 @@ export default function Footer() {
       >
         <i className="fab fa-whatsapp"></i>
       </a>
-      {/* Inline CSS for responsiveness */}
-     <style>{`
-  @media (max-width: 550px) {
-    .whatsapp-float {
-      bottom: 70px !important;
-      right: 150px !important;
-      position: fixed !important;
-      z-index: 9999;
-      width: 50px;
-      height: 50px;
-      font-size: 25px;
-    }
-  }
-`}</style>
+       {/* Inline CSS for responsiveness */}
+      <style jsx>{`
+        .whatsapp-float {
+          position: fixed !important;
+          bottom: 20px !important;
+          right: 20px !important;
+          z-index: 10000 !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+        @media (max-width: 550px) {
+          .whatsapp-float {
+            width: 50px !important;
+            height: 50px !important;
+            font-size: 24px !important;
+            bottom: 15px !important;
+            right: 150px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
