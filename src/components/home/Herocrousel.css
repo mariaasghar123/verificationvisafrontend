@@ -56,9 +56,9 @@
     max-width: 90%;
     top: 10%;
     left: 5%;
-    
-    text-align: center;
     color: black;
+    text-align: center;
+   
   }
 
   .carousel-content h1 {
@@ -90,8 +90,9 @@
     top: 5%;
     left: 2%;
     max-width: 96%;
-    text-align: center;
     color: black;
+    text-align: center;
+    
   }
 
   .carousel-content h1 {
