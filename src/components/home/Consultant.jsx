@@ -29,7 +29,15 @@ export default function Consultant() {
           </div>
         </div>
       </div>
-      <div><img src="./media/images/StudentVisa.jpg" style={{ width: "500px" }}/></div>
+      {/* <div><img src="./media/images/StudentVisa.jpg" style={{ width: "500px" }}/></div> */}
+      <div>
+  <img
+    src="./media/images/StudentVisa.jpg"
+    style={{ width: "100%", maxWidth: "500px", height: "auto" }}
+    alt="Student Visa"
+  />
+</div>
+
       <div className="flex flex-column mt-5 gap-2">
             <img src="./media/images/passport.jpg" style={{ width: "280px" }}/>
             <img src="./media/images/tourist.jpg" style={{ width: "280px" }}/>
