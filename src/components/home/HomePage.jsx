@@ -4,14 +4,21 @@ import Cards from "./Cards";
 import Category from "./Category";
 import Consultant from "./Consultant";
 import Logos from "./Logos";
-export default function HomePage() {
+import Map from "./Map";
+import VisaCategories from "./VisaCategory";
+import ContactUs from "./ContactUs";
+export default function HomePage({ footerRef }) {
   return (
     <div>
+      
       <Hero />
       <Logos/>
       <Cards />
       <Consultant />
+      <Map/>
       <Category />
+      <VisaCategories scroltofooter={() => footerRef.current.scrollIntoView({ behavior: 'smooth' })} />
+      <ContactUs/>
     </div>
   );
 }

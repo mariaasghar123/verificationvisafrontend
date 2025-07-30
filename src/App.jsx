@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { useRef } from "react";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "react-toastify";
@@ -12,19 +13,22 @@ import AdminForm from "./components/admin/AdminForm";
 import AdminDocumentList from "./components/admin/AdmingetDocument";
 import AdminPage from "./components/admin/Singup";
 export default function App() {
+    const footerRef = useRef(null); // define ref here
   return (
     <div>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage footerRef={footerRef}/>} />
           <Route path="/Verification" element={<Verification />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="api/admin/upload" element={<AdminForm />} />
           <Route path="api/admin" element={<AdminDocumentList />} />
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
+        <div ref={footerRef}>
         <Footer />
+      </div>
       </BrowserRouter>
     </div>
   );

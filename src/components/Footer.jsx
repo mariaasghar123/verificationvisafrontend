@@ -46,12 +46,12 @@ export default function Footer() {
                 }}
                 className="mx-md-0 mx-auto"
               ></div>
-              <ul className="list-unstyled">
-                <li><strong>Phone:</strong> +1 (920) 489-7664</li>
-                <li><strong>Email:</strong> sardarjagmohansingh302@gmail.com</li>
-                <li><strong>Name:</strong> Sardar Jagmohan Singh</li>
-                <li><strong>Helpline:</strong> +44 7861 666 452</li>
-                
+              <ul className="list-unstyled space-y-2">
+                <li className='mb-3'><strong>Phone:</strong> +1 (920) 489-7664</li>
+                <li className='mb-3'><strong>Email:</strong> sardarjagmohansingh302@gmail.com</li>
+                <li className='mb-3'><strong>Name:</strong> Sardar Jagmohan Singh</li>
+                <li className='mb-3'><strong>Helpline:</strong> +44 7861 666 452</li>
+                <li className='mb-3'><strong>Location:</strong> Toronto Canada</li>
               </ul>
             </div>
           </div>
@@ -91,8 +91,14 @@ export default function Footer() {
     .whatsapp-float {
       bottom: 70px !important;
       right: 150px !important;
-      position: fixed;
+      position: fixed !important;
       z-index: 9999;
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      display: 'flex';
+      justify-content: 'center';
+      align-items: 'center';
     }
   }
 `}</style>

@@ -1,0 +1,23 @@
+import React from 'react';
+
+export default function Map() {
+  return (
+    <div className="w-full px-4 md:px-16 lg:px-32 mt-5">
+      <div className="w-full flex justify-content-center h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl">
+        <iframe
+          title="Google Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184553.61473317383!2d-79.68986348350496!3d43.71781740883666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2s!4v1753821357571!5m2!1sen!2s"
+          width="80%"
+          height="100%"
+          display='flex'
+          justifyContent='center'
+          alignItems= 'center'
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  );
+}
