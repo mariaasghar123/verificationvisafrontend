@@ -33,7 +33,7 @@ const ContactUs = () => {
           <div className="col-md-4 mb-4">
             <FaPhone className="text-danger mb-2" size={32} />
             <h5 className="fw-semibold">Phone</h5>
-            <p className="text-muted">+1 (920) 489-7664</p>
+            <p className="text-muted">+1 (807) 799-8864</p>
           </div>
 
           {/* Email */}

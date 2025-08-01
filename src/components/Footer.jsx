@@ -47,7 +47,7 @@ export default function Footer() {
                 className="mx-md-0 mx-auto"
               ></div>
               <ul className="list-unstyled space-y-2">
-                <li className='mb-3'><strong>Phone:</strong> +18077998864</li>
+                <li className='mb-3'><strong>Phone:</strong> +1 (807) 799-8864</li>
                 <li className='mb-3'><strong>Email:</strong> sardarjagmohansingh302@gmail.com</li>
                 <li className='mb-3'><strong>Name:</strong> Sardar Jagmohan Singh</li>
                 <li className='mb-3'><strong>Helpline:</strong> +44 7861 666 452</li>
