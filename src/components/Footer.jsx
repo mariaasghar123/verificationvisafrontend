@@ -47,7 +47,7 @@ export default function Footer() {
                 className="mx-md-0 mx-auto"
               ></div>
               <ul className="list-unstyled space-y-2">
-                <li className='mb-3'><strong>Phone:</strong> +1 (920) 489-7664</li>
+                <li className='mb-3'><strong>Phone:</strong> +18077998864</li>
                 <li className='mb-3'><strong>Email:</strong> sardarjagmohansingh302@gmail.com</li>
                 <li className='mb-3'><strong>Name:</strong> Sardar Jagmohan Singh</li>
                 <li className='mb-3'><strong>Helpline:</strong> +44 7861 666 452</li>
@@ -60,7 +60,7 @@ export default function Footer() {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/447861666452"
+        href="https://wa.me/+18077998864"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
