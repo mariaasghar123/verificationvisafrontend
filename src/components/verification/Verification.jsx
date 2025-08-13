@@ -53,7 +53,7 @@ export default function Verify() {
         <h2 className="underline">Enquire Verification:</h2>
         <form className="w-75" onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Enter Reference Number</label>
+            <label className="form-label">Enter Date of Birth</label>
             <input
               type="text"
               className="form-control"

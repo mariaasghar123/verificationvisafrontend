@@ -10,7 +10,7 @@ export default function AdminPage() {
 
   const handleCheck = (e) => {
     e.preventDefault();
-    if (password === "admin123") {
+    if (password === "King@8770") {
       // 💡 yahan apna real password rakhna
       setAuthenticated(true);
       setError("");
