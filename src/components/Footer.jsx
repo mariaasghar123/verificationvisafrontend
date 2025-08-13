@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
 
             {/* About Us */}
-            <div className="col-12 col-md-4 mb-4 text-center text-md-start">
+            <div className="col-12 col-md-6 mb-4 text-center text-md-start">
               <h4>About Us</h4>
               <div
                 style={{
@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
 
             {/* Contact Us */}
-            <div className="col-12 col-md-4 text-center text-md-start">
+            {/* <div className="col-12 col-md-4 text-center text-md-start">
               <h4>Contact Us</h4>
               <div
                 style={{
@@ -53,13 +53,13 @@ export default function Footer() {
                 <li className='mb-3'><strong>Helpline:</strong> +44 7861 666 452</li>
                 <li className='mb-3'><strong>Location:</strong> Toronto Canada</li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       {/* WhatsApp Floating Button */}
-      <a
+      {/* <a
         href="https://wa.me/+18077998864"
         target="_blank"
         rel="noopener noreferrer"
@@ -84,9 +84,9 @@ export default function Footer() {
         }}
       >
         <i className="fab fa-whatsapp"></i>
-      </a>
+      </a> */}
        {/* Inline CSS for responsiveness */}
-      <style jsx>{`
+      {/* <style jsx>{`
         .whatsapp-float {
           position: fixed !important;
           bottom: 20px !important;
@@ -105,7 +105,7 @@ export default function Footer() {
             right: 150px !important;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 }

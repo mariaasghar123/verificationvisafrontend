@@ -1,0 +1,30 @@
+/* Desktop: images row behaves normally */
+.images-row {
+  display: block;   /* ya aapka jo bhi default ho */
+  gap: 1rem;        /* space between images */
+}
+
+/* Mobile and tablet: images in one row with horizontal scroll */
+@media screen and (max-width: 768px) {
+  .images-row {
+    display: flex;        /* row layout */
+    flex-wrap: nowrap;    /* no wrapping, ek line */
+    overflow-x: auto;     /* horizontal scroll agar width zyada hui */
+    gap: 10px;
+  }
+  .images-row img {
+    flex: 0 0 auto;       /* image khud ki width lega */
+    max-width: 280px;     /* ya aapki images ka max width */
+    height: auto;
+  }
+}
+
+/* Small devices (mobile phones) */
+@media screen and (max-width: 480px) {
+  .images-row {
+    gap: 8px;
+  }
+  .images-row img {
+    max-width: 220px;     /* chhoti devices pe thoda chhota images */
+  }
+}

@@ -12,7 +12,7 @@ export default function Navbar() {
         <img
           src="/media/images/Googlevisalogo.png"
           alt="Logo"
-          style={{ width: "200px" }}
+          style={{ width: window.innerWidth < 576 ? "120px" : "150px" }}
         /> 
 
         {/* Hamburger Button - visible only on small/medium screens */}

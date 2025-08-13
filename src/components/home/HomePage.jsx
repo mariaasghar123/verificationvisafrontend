@@ -6,7 +6,6 @@ import Consultant from "./Consultant";
 import Logos from "./Logos";
 import Map from "./Map";
 import VisaCategories from "./VisaCategory";
-import ContactUs from "./ContactUs";
 export default function HomePage({ footerRef }) {
   return (
     <div>
@@ -18,7 +17,7 @@ export default function HomePage({ footerRef }) {
       <Map/>
       <Category />
       <VisaCategories scroltofooter={() => footerRef.current.scrollIntoView({ behavior: 'smooth' })} />
-      <ContactUs/>
+      
     </div>
   );
 }

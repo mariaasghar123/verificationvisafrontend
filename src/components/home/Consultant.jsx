@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Consultant() {
   return (
-    <div className="mt-5 pt-5 flex flex-wrap gap-3">
+    <div className="mt-5 pt-5 flex flex-wrap gap-3 justify-content-center">
       <div className="card border-0 z-n1 position-relative shadow ps-5 bg-white lg-w-50 h-100">
         <h5 className="text-danger">About Consultant</h5>
         <p className="fs-4">
@@ -30,18 +30,21 @@ export default function Consultant() {
         </div>
       </div>
       {/* <div><img src="./media/images/StudentVisa.jpg" style={{ width: "500px" }}/></div> */}
+      <div className="flex ">
       <div>
   <img
     src="./media/images/StudentVisa.jpg"
-    style={{ width: "100%", maxWidth: "500px", height: "auto" }}
+    style={{ width: "100%", maxWidth: "500px", height: "500px" }}
     alt="Student Visa"
   />
 </div>
 
-      <div className="flex flex-column mt-5 gap-2">
-            <img src="./media/images/passport.jpg" style={{ width: "280px" }}/>
-            <img src="./media/images/tourist.jpg" style={{ width: "280px" }}/>
+      <div className="flex flex-column  mt-5 gap-2">
+            <img src="./media/images/passport.jpg" style={{ width: "280px", maxWidth: "200px", height: "200px"  }}/>
+            <img src="./media/images/tourist.jpg" style={{ width: "280px", maxWidth: "200px", height: "200px"  }}/>
+      </div>
       </div>
     </div>
+
   );
 }

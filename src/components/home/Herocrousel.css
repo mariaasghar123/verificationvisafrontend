@@ -109,3 +109,77 @@
     font-size: 1.2rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  /* Hero carousel ki height thoda kam karen */
+  .carousel-content {
+    position: absolute;   /* content image ke bilkul upar rahe */
+    top: 0;
+    left: 5%;
+    right: 5%;
+    max-width: 90%;
+    color: black;
+    text-align: left;      /* aap chahein to center bhi kar sakte hain */
+    font-size: smaller;    /* font chhota */
+    padding-top: 5px;
+  }
+  .carousel-content h1 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .carousel-content h5 {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  .hero-carousel {
+    height: 60vh;    /* ya 65vh rakh sakte hain */
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Image height adjust karna baki rahe */
+  .carousel-image img {
+    height: 50vh;
+  }
+
+  /* Carousel ke neeche margin kam karen agar koi ho */
+  /* Agar ye Bootstrap's container hai toh uska margin-top kam karen */
+  .container.mt-5.pt-5 {
+    margin-top: 10px !important;
+    padding-top: 5px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .carousel-content {
+    position: absolute;    /* bilkul upar image ke */
+    top: 2%;
+    left: 10%;
+    right: 5%;
+    max-width: 94%;
+    color: black;
+    text-align: center;
+    padding-top: 4px;
+  }
+  .carousel-content h1 {
+    font-size: 1rem;
+    margin: 0;
+  }
+  .carousel-content h5 {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  .hero-carousel {
+    height: 50vh;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .carousel-image img {
+    height: 40vh;
+  }
+  .container.mt-5.pt-5 {
+    margin-top: 8px !important;
+    padding-top: 4px !important;
+  }
+}
