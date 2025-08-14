@@ -88,7 +88,7 @@ export default function Verify() {
               <strong>Name:</strong> {result.name}
             </p>
             <p>
-              <strong>Reference:</strong> {result.referenceNumber}
+              <strong>Date of Birth:</strong> {result.referenceNumber}
             </p>
             <p>
               <strong>Passport:</strong> {result.passportNumber}

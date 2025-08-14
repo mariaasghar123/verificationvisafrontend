@@ -56,7 +56,7 @@ export default function AdminDocumentList() {
           <tr>
             <th className="border px-2 py-1">Name</th>
             <th className="border px-2 py-1">Passport #</th>
-            <th className="border px-2 py-1">Reference #</th>
+            <th className="border px-2 py-1">Date of Birth #</th>
             <th className="border px-2 py-1">Files</th>
             <th className="border px-2 py-1">Action</th>
           </tr>
