@@ -90,7 +90,7 @@ export default function AdminUploadForm() {
         <input
           name="referenceNumber"
           type="text"
-          placeholder="Reference Number"
+          placeholder="Date of Birth"
           value={formData.referenceNumber}
           onChange={handleChange}
           className="w-full p-2 border rounded mb-3"
